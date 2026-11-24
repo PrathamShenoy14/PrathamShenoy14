@@ -1,0 +1,85 @@
+{
+  "login": "PrathamShenoy14",
+  "name": "Pratham Shenoy",
+  "eyebrow": "Software Engineer",
+  "location": "India",
+  "headline": ["Backend systems.", "Developer tooling."],
+  "bio": [
+    "Computer Engineering graduate and former",
+    "SDK Engineer Intern at BrowserStack.",
+    "I build backends, SDKs and AI tools."
+  ],
+  "tools": [
+    { "slug": "openjdk", "name": "Java" },
+    { "slug": "python", "name": "Python" },
+    { "slug": "typescript", "name": "TypeScript" },
+    { "slug": "react", "name": "React" },
+    { "slug": "nodedotjs", "name": "Node.js" },
+    { "slug": "springboot", "name": "Spring Boot" },
+    { "slug": "postgresql", "name": "PostgreSQL" },
+    { "slug": "docker", "name": "Docker" }
+  ],
+  "openSource": {
+    "names": {
+      "MustacheCase/zanadir": "Zanadir",
+      "darshi1337/apogee": "Apogee",
+      "petertzy/deeplocal-chat-adapter": "DeepLocal Chat",
+      "emreocell/Praxi-Bot": "Praxi Bot",
+      "pipeshub-ai/pipeshub-ai": "PipesHub AI",
+      "JamshidS/aiset": "aiset",
+      "techkayacodes/keyboard-cheat-codes": "Keyboard Cheat Codes",
+      "splashxmoon/friday": "Friday",
+      "alex-w-developer/GetBlocked": "GetBlocked",
+      "AubaidFarrukh/smart-retry": "smart-retry",
+      "Ishannaik/seatsniper": "SeatSniper"
+    },
+    "exclude": []
+  },
+  "projects": [
+    {
+      "name": "VaultDrive",
+      "url": "https://github.com/PrathamShenoy14/VaultDrive",
+      "status": "Building now",
+      "lines": ["Cloud storage and file sharing,", "inspired by Google Drive."],
+      "tech": "Java · Spring Boot · PostgreSQL"
+    },
+    {
+      "name": "HealthBridge AI",
+      "url": "https://github.com/PrathamShenoy14/Healthbridge-AI",
+      "status": "Project",
+      "lines": ["Dermatology assistant with image", "analysis, RAG and AI chat."],
+      "tech": "React Native · FastAPI · TensorFlow"
+    },
+    {
+      "name": "CareerLink",
+      "url": "https://github.com/PrathamShenoy14/CareerLink",
+      "status": "Project",
+      "lines": ["Career guidance, resume building", "and mock interviews."],
+      "tech": "Next.js · TypeScript · MongoDB"
+    }
+  ],
+  "cta": {
+    "eyebrow": "Have an idea, or a role in mind?",
+    "title": "Let's build it.",
+    "note": "BACKEND · SDKS · AI TOOLING"
+  },
+  "contact": [
+    { "label": "Email me", "url": "mailto:prathamshenoy7@gmail.com", "primary": true },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/pratham-shenoy-6a4b64257/" },
+    { "label": "LeetCode", "url": "https://leetcode.com/u/prathamshenoy7/" },
+    { "label": "Codeforces", "url": "https://codeforces.com/profile/prathamshenoy7" }
+  ],
+  "extraLinks": [
+    { "label": "CodeChef", "url": "https://www.codechef.com/users/prathamshenoy" }
+  ],
+  "palette": {
+    "ink": "#0A0E16",
+    "text": "#EEF2F8",
+    "accent": "#7CB8FF",
+    "muted": "#9AA6B8",
+    "quiet": "#5F6B7E",
+    "glowA": "#2F6FEB",
+    "glowB": "#7C3AED",
+    "glowC": "#0EA5A4"
+  }
+}

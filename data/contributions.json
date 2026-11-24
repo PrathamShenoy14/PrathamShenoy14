@@ -1,0 +1,272 @@
+{
+  "repos": [
+    {
+      "repository": "MustacheCase/zanadir",
+      "stars": 186,
+      "language": "Go",
+      "description": "Open-source CI/CD security tool: finds the security checks your pipeline is missing, and the ones that can never fail the build. GitHub Actions, GitLab CI and more.",
+      "prs": [
+        {
+          "number": 684,
+          "title": "fix(remote): detect settings-enabled Dependabot security updates",
+          "mergedAt": "2026-11-20T05:39:13Z"
+        },
+        {
+          "number": 689,
+          "title": "Recognise legacy Super-linter and MegaLinter names",
+          "mergedAt": "2026-11-18T19:40:33Z"
+        },
+        {
+          "number": 671,
+          "title": "feat(rules): recognise lockfile-lint as supply chain",
+          "mergedAt": "2026-11-17T05:37:44Z"
+        },
+        {
+          "number": 640,
+          "title": "feat(rules): recognize markdown-link-check as a linter",
+          "mergedAt": "2026-11-14T11:50:12Z"
+        },
+        {
+          "number": 574,
+          "title": "fix(grading): report unchecked SCA ecosystems",
+          "mergedAt": "2026-11-10T17:22:58Z"
+        },
+        {
+          "number": 523,
+          "title": "Fix recognition and grading of quoted executable paths",
+          "mergedAt": "2026-11-03T18:07:22Z"
+        },
+        {
+          "number": 503,
+          "title": "Recognise GuardDog as SCA",
+          "mergedAt": "2026-11-02T10:32:58Z"
+        },
+        {
+          "number": 494,
+          "title": "feat(rules): recognise yamllint as a linter",
+          "mergedAt": "2026-11-01T11:57:12Z"
+        },
+        {
+          "number": 482,
+          "title": "feat(grading): grade flawfinder action arguments",
+          "mergedAt": "2026-11-01T06:24:29Z"
+        },
+        {
+          "number": 421,
+          "title": "fix: recognise markdownlint as a linter",
+          "mergedAt": "2026-10-31T06:47:02Z"
+        }
+      ]
+    },
+    {
+      "repository": "darshi1337/apogee",
+      "stars": 124,
+      "language": "JavaScript",
+      "description": "Private AI summarizer for anything you read. Inspired by Mozilla's Orbit.",
+      "prs": [
+        {
+          "number": 664,
+          "title": "feat: enable remote background summaries, multi-tab synthesis and follow-up questions (B2)",
+          "mergedAt": "2026-11-15T17:57:09Z"
+        },
+        {
+          "number": 617,
+          "title": "feat: enable opt-in remote Summary and Ask (B1)",
+          "mergedAt": "2026-11-06T14:10:17Z"
+        },
+        {
+          "number": 606,
+          "title": "feat: add shared remote client and opt-in setup (stage A)",
+          "mergedAt": "2026-11-03T17:22:45Z"
+        },
+        {
+          "number": 595,
+          "title": "fix: Preserve shared offscreen runs until the last viewer closes",
+          "mergedAt": "2026-11-01T12:27:41Z"
+        },
+        {
+          "number": 571,
+          "title": "perf: build history embeddings on demand",
+          "mergedAt": "2026-10-28T13:29:42Z"
+        },
+        {
+          "number": 480,
+          "title": "fix: Reject unsupported file uploads (#472)",
+          "mergedAt": "2026-10-18T13:12:32Z"
+        }
+      ]
+    },
+    {
+      "repository": "petertzy/deeplocal-chat-adapter",
+      "stars": 2,
+      "language": "TypeScript",
+      "description": "VS Code extension for chatting with and delegating coding tasks to local DeepLocal OpenAI-compatible models.",
+      "prs": [
+        {
+          "number": 89,
+          "title": "Add bounded read-only parallel subagents",
+          "mergedAt": "2026-11-09T16:45:10Z"
+        },
+        {
+          "number": 87,
+          "title": "Add bounded verification-driven repair cycles for coding tasks",
+          "mergedAt": "2026-10-26T03:09:05Z"
+        },
+        {
+          "number": 84,
+          "title": "Prevent TypeScript edit regressions with import and diagnostic checks",
+          "mergedAt": "2026-10-23T08:50:05Z"
+        },
+        {
+          "number": 76,
+          "title": "Add read-only Git code review mode",
+          "mergedAt": "2026-10-20T13:35:29Z"
+        },
+        {
+          "number": 63,
+          "title": "test: add focused tool argument validation coverage",
+          "mergedAt": "2026-10-19T13:48:38Z"
+        },
+        {
+          "number": 59,
+          "title": "Add copy action for completed assistant messages",
+          "mergedAt": "2026-10-15T07:45:33Z"
+        }
+      ]
+    },
+    {
+      "repository": "emreocell/Praxi-Bot",
+      "stars": 25,
+      "language": "Rust",
+      "description": "Local-first, open-source AI agent platform built with Rust and Tauri. Desktop automation, multi-agent workflows, permission controls, and local or cloud LLMs.",
+      "prs": [
+        {
+          "number": 738,
+          "title": "feat(desktop): praxi:// deep links to open a bot, chat or run",
+          "mergedAt": "2026-11-24T13:49:46Z"
+        },
+        {
+          "number": 485,
+          "title": "feat(release): check versions and generate grouped release notes",
+          "mergedAt": "2026-11-21T19:07:06Z"
+        },
+        {
+          "number": 423,
+          "title": "fix(docs): validate Markdown heading anchors",
+          "mergedAt": "2026-11-20T18:46:50Z"
+        },
+        {
+          "number": 327,
+          "title": "feat(scripts): check contributor prerequisites",
+          "mergedAt": "2026-11-19T16:59:34Z"
+        },
+        {
+          "number": 265,
+          "title": "feat(cli): add shell completions and man pages",
+          "mergedAt": "2026-11-18T22:07:09Z"
+        }
+      ]
+    },
+    {
+      "repository": "pipeshub-ai/pipeshub-ai",
+      "stars": 4150,
+      "language": "Python",
+      "description": "The open-source context layer for AI agents and enterprise AI search. Permission-aware search and cited answers across 30+ sources, including Slack, Drive, Jira, GitHub and Microsoft 365, for people and agents through MCP, SDKs and built-in agents. Self-hosted or Cloud.",
+      "prs": [
+        {
+          "number": 5750,
+          "title": "feat(mcp): add official monday.com server to the catalog",
+          "mergedAt": "2026-11-13T16:20:28Z"
+        },
+        {
+          "number": 5434,
+          "title": "feat(mcp): add Airtable to server catalog",
+          "mergedAt": "2026-11-05T22:36:35Z"
+        }
+      ]
+    },
+    {
+      "repository": "JamshidS/aiset",
+      "stars": 15,
+      "language": "Python",
+      "description": "Turn your repos into a team of Claude Code agents with persistent memory, coordinated tasks, and a live dashboard.",
+      "prs": [
+        {
+          "number": 136,
+          "title": "fix(run): reveal hidden characters in issue text",
+          "mergedAt": "2026-11-20T01:18:48Z"
+        },
+        {
+          "number": 133,
+          "title": "fix: parse supported GitHub issue references",
+          "mergedAt": "2026-11-06T19:50:50Z"
+        }
+      ]
+    },
+    {
+      "repository": "splashxmoon/friday",
+      "stars": 86,
+      "language": "TypeScript",
+      "description": "A local-first desktop alternative to Grok Bot, OpenBot, T3 Code, Herdr and Orca. Run Claude Code, Codex, Cursor and 13 more coding agents as one team on your own computer: a shared board, agents that check each other’s work, and no account. Free. macOS, Windows, Linux.",
+      "prs": [
+        {
+          "number": 10,
+          "title": "Add Qwen Code support over ACP",
+          "mergedAt": "2026-11-02T22:49:39Z"
+        }
+      ]
+    },
+    {
+      "repository": "alex-w-developer/GetBlocked",
+      "stars": 26,
+      "language": "JavaScript",
+      "description": "Lightweight, local-only MV3 Chrome extension for reducing common third-party web tracking.",
+      "prs": [
+        {
+          "number": 55,
+          "title": "docs: add Decoy Mode request transformation examples",
+          "mergedAt": "2026-10-08T04:33:26Z"
+        }
+      ]
+    },
+    {
+      "repository": "Ishannaik/seatsniper",
+      "stars": 6,
+      "language": "TypeScript",
+      "description": "Discord bot that watches BookMyShow and DMs you the moment tickets open. Self-hosted with one command. Bun + TypeScript + SQLite, no API keys.",
+      "prs": [
+        {
+          "number": 155,
+          "title": "docs: clarify Bun trust handling for Docker",
+          "mergedAt": "2026-11-18T08:45:55Z"
+        }
+      ]
+    },
+    {
+      "repository": "AubaidFarrukh/smart-retry",
+      "stars": 2,
+      "language": "TypeScript",
+      "description": "Intelligent HTTP retry with exponential backoff, automatic failure logging, and replay support",
+      "prs": [
+        {
+          "number": 70,
+          "title": "feat: respect Retry-After header for fetch retries",
+          "mergedAt": "2026-10-23T12:41:12Z"
+        }
+      ]
+    },
+    {
+      "repository": "techkayacodes/keyboard-cheat-codes",
+      "stars": 1,
+      "language": "JavaScript",
+      "description": "An interactive digital keyboard playground: explore keyboard layouts, test shortcuts, play typing games, and hear switch-inspired sounds.",
+      "prs": [
+        {
+          "number": 34,
+          "title": "feat(colorway): add Cyberpunk 2077 theme",
+          "mergedAt": "2026-11-14T03:27:33Z"
+        }
+      ]
+    }
+  ]
+}
