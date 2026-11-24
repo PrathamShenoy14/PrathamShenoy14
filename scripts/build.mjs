@@ -342,6 +342,7 @@ function layout(L) {
 
     cells.push({
       frac: ROW_INFO, file: `${slug}-info`, alt: `${name} (${repo.repository})`,
+      href: `https://github.com/${repo.repository}`, title: repo.description || repo.repository,
       draw: (c, y0) => {
         const tile = mobile ? 34 : 44;
         const ty = y0 + (rowH - tile) / 2;
