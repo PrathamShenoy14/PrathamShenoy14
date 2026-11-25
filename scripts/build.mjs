@@ -61,7 +61,10 @@ async function fetchContributions() {
   for (const [full, prs] of byRepo) {
     const meta = await gh(`/repos/${full}`);
     prs.sort((a, b) => String(b.mergedAt).localeCompare(String(a.mergedAt)));
-    repos.push({ repository: meta.full_name, stars: meta.stargazers_count, language: meta.language, description: meta.description, prs });
+    repos.push({
+      repository: meta.full_name, stars: meta.stargazers_count, language: meta.language, description: meta.description,
+      ownerType: meta.owner.type, ownerAvatar: meta.owner.avatar_url, prs,
+    });
   }
   repos.sort((a, b) => b.prs.length - a.prs.length || b.stars - a.stars || a.repository.localeCompare(b.repository));
   return { repos };
@@ -77,6 +80,128 @@ async function fetchActivity() {
     weeks: cal.weeks.map((w) => w.contributionDays.map((d) => [d.date, d.contributionCount])),
     refreshedAt: new Date().toISOString(),
   };
+}
+
+// ---------------------------------------------------------------- repository logos
+//
+// For each contributed repository, look for a logo or app icon in the repository itself. If none
+// fits and the owner is an organisation, use the organisation's avatar (usually its logo).
+// Otherwise the row keeps a lettered tile. Choices are cached in data/logos.json (images in
+// data/logos/) and only re-checked weekly; `openSource.logos` in the config can force a path in
+// the repository, an image URL, or "none".
+
+const LOGO_DIR = join(ROOT, "data", "logos");
+const LOGO_INDEX = join(ROOT, "data", "logos.json");
+const LOGO_MAX_BYTES = 150_000;
+const RECHECK_MS = 7 * 24 * 3600 * 1000;
+
+function scoreLogoPath(path, size, repoName) {
+  const p = path.toLowerCase();
+  const base = p.split("/").pop();
+  if (!/\.(png|svg)$/.test(base) || !/(logo|icon|favicon|brand)/.test(base)) return null;
+  if (/(^|\/)(node_modules|vendor|third[-_]?party|tests?|__tests__|fixtures?|examples?|demos?|screenshots?|icons)\//.test(p)) return null;
+  if (size > LOGO_MAX_BYTES || size < 200) return null;
+  let s = 0;
+  if (base.startsWith("apple-touch-icon")) s += 50;
+  if (base.endsWith(".svg")) s += 30;
+  if (base.includes("logo")) s += 20;
+  if (base.includes("icon")) s += 15;
+  if (base.includes("favicon")) s += 5;
+  if (p.includes(repoName.toLowerCase())) s += 10;
+  if (!p.includes("/") || /(^|\/)(assets|static|public|branding|brand|docs|\.github|build|images?|img|media|resources)\//.test(p)) s += 10;
+  const px = base.match(/(\d+)(?:p|px)?(?:@\dx)?\.(png|svg)$/);
+  if (px) s += +px[1] < 64 ? -40 : +px[1] >= 96 ? 5 : 0;
+  return s - p.split("/").length;
+}
+
+function imageInfo(buf, type) {
+  if (type === "png") {
+    if (buf.readUInt32BE(0) !== 0x89504e47) return null;
+    return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
+  }
+  if (type === "svg") {
+    const head = buf.toString("utf8", 0, 4000);
+    if (!/<svg[\s>]/i.test(head)) return null;
+    const vb = head.match(/viewBox\s*=\s*["']\s*[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)/i);
+    if (vb) return { w: +vb[1], h: +vb[2] };
+    const w = head.match(/\swidth\s*=\s*["']([\d.]+)/i), h = head.match(/\sheight\s*=\s*["']([\d.]+)/i);
+    return w && h ? { w: +w[1], h: +h[1] } : { w: 1, h: 1 };
+  }
+  if (type === "jpg") return { w: 1, h: 1 }; // only used for avatars, which are square
+  return null;
+}
+
+async function download(url) {
+  const res = await fetch(url, { headers: { "User-Agent": "profile-panel-build" } });
+  if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`);
+  const buf = Buffer.from(await res.arrayBuffer());
+  const ct = res.headers.get("content-type") || "";
+  const type = /svg/.test(ct) || /\.svg($|\?)/i.test(url) ? "svg" : /png/.test(ct) || /\.png($|\?)/i.test(url) ? "png" : /jpe?g/.test(ct) ? "jpg" : null;
+  return { buf, type };
+}
+
+// Accept roughly square images that are big enough to stay sharp in the tile.
+function acceptable({ buf, type }) {
+  if (!type || buf.length > LOGO_MAX_BYTES) return false;
+  const info = imageInfo(buf, type);
+  if (!info) return false;
+  const ratio = info.w / info.h;
+  if (ratio < 0.8 || ratio > 1.25) return false;
+  return type !== "png" || Math.min(info.w, info.h) >= 64;
+}
+
+async function detectLogo(repo) {
+  const [, name] = repo.repository.split("/");
+  const tree = await gh(`/repos/${repo.repository}/git/trees/HEAD?recursive=1`);
+  const candidates = tree.tree
+    .filter((t) => t.type === "blob")
+    .map((t) => ({ path: t.path, score: scoreLogoPath(t.path, t.size, name) }))
+    .filter((c) => c.score != null)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 6);
+  for (const c of candidates) {
+    const img = await download(`https://raw.githubusercontent.com/${repo.repository}/HEAD/${c.path.split("/").map(encodeURIComponent).join("/")}`).catch(() => null);
+    if (img && acceptable(img)) return { ...img, source: c.path };
+  }
+  if (repo.ownerType === "Organization" && repo.ownerAvatar) {
+    const img = await download(`${repo.ownerAvatar}${repo.ownerAvatar.includes("?") ? "&" : "?"}s=128`).catch(() => null);
+    if (img && acceptable(img)) return { ...img, source: "owner avatar" };
+  }
+  return null;
+}
+
+async function resolveLogos(repos) {
+  const index = existsSync(LOGO_INDEX) ? JSON.parse(readFileSync(LOGO_INDEX, "utf8")) : {};
+  const overrides = cfg.openSource.logos || {};
+  mkdirSync(LOGO_DIR, { recursive: true });
+  for (const repo of repos) {
+    const key = repo.repository;
+    const override = overrides[key] ?? null;
+    const prev = index[key];
+    const fresh = prev && prev.override === override &&
+      (prev.file ? existsSync(join(LOGO_DIR, prev.file)) : Date.now() - Date.parse(prev.checkedAt) < RECHECK_MS);
+    if (fresh) continue;
+    let found = null;
+    try {
+      if (override === "none") found = null;
+      else if (override && /^https?:/.test(override)) found = { ...(await download(override)), source: override };
+      else if (override) found = { ...(await download(`https://raw.githubusercontent.com/${key}/HEAD/${override}`)), source: override };
+      else found = await detectLogo(repo);
+    } catch (e) {
+      console.warn(`logo ${key}:`, e.message);
+      if (prev) continue; // keep the previous decision on transient errors
+    }
+    if (prev?.file) rmSync(join(LOGO_DIR, prev.file), { force: true });
+    let file = null;
+    if (found?.type) {
+      file = `${key.toLowerCase().replace(/[^a-z0-9]+/g, "-")}.${found.type}`;
+      writeFileSync(join(LOGO_DIR, file), found.buf);
+    }
+    index[key] = { file, source: found?.source ?? null, override, checkedAt: new Date().toISOString().slice(0, 10) };
+    console.log(`logo ${key}: ${found ? found.source : "none (letter tile)"}`);
+  }
+  writeFileSync(LOGO_INDEX, JSON.stringify(index, null, 2) + "\n");
+  return index;
 }
 
 function cached(name, fresh) {
@@ -106,6 +231,24 @@ if (OFFLINE) {
 } else {
   contributions = cached("contributions", await fetchContributions().catch((e) => { console.warn("contributions:", e.message); return null; }));
   activity = cached("activity", await fetchActivity().catch((e) => { console.warn("activity:", e.message); return null; }));
+}
+const logoIndex = OFFLINE
+  ? (existsSync(LOGO_INDEX) ? JSON.parse(readFileSync(LOGO_INDEX, "utf8")) : {})
+  : await resolveLogos(contributions.repos);
+const MIME = { png: "image/png", svg: "image/svg+xml", jpg: "image/jpeg" };
+function logoDataUri(repository) {
+  const entry = logoIndex[repository];
+  if (!entry?.file || !existsSync(join(LOGO_DIR, entry.file))) return null;
+  const type = entry.file.split(".").pop();
+  let buf = readFileSync(join(LOGO_DIR, entry.file));
+  if (type === "svg") {
+    // Logos sit on a light tile in an always-dark panel, so pin them to their light-mode colours:
+    // drop dark-mode overrides (which follow the viewer's OS setting) and any scripts.
+    buf = Buffer.from(buf.toString("utf8")
+      .replace(/@media[^{]*prefers-color-scheme\s*:\s*dark[^{]*\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/gi, "")
+      .replace(/<script[\s\S]*?<\/script>/gi, ""));
+  }
+  return `data:${MIME[type]};base64,${buf.toString("base64")}`;
 }
 
 // ---------------------------------------------------------------- fonts & text
@@ -354,9 +497,19 @@ function layout(L) {
       draw: (c, y0) => {
         const tile = mobile ? 34 : 44;
         const ty = y0 + (rowH - tile) / 2;
-        c.add(`<rect x="${r2(pad)}" y="${r2(ty)}" width="${tile}" height="${tile}" rx="${tile * 0.26}" fill="${lang}"/>`);
-        c.add(`<rect x="${r2(pad)}" y="${r2(ty)}" width="${tile}" height="${tile}" rx="${tile * 0.26}" fill="url(#tileShine)"/>`);
-        c.text(pad + tile / 2, ty + tile * 0.69, name[0].toUpperCase(), { font: "sg7", size: tile * 0.52, anchor: "middle", fill: lum(lang) > 0.55 ? P.ink : "#FFFFFF" });
+        const logo = logoDataUri(repo.repository);
+        const rx = r2(tile * 0.26);
+        if (logo) {
+          // A light tile keeps dark and transparent logos visible on the dark panel.
+          const inset = tile * 0.12;
+          c.add(`<clipPath id="logoClip"><rect x="${r2(pad)}" y="${r2(ty)}" width="${tile}" height="${tile}" rx="${rx}"/></clipPath>`);
+          c.add(`<rect x="${r2(pad)}" y="${r2(ty)}" width="${tile}" height="${tile}" rx="${rx}" fill="#F4F6FA"/>`);
+          c.add(`<image clip-path="url(#logoClip)" x="${r2(pad + inset)}" y="${r2(ty + inset)}" width="${r2(tile - 2 * inset)}" height="${r2(tile - 2 * inset)}" preserveAspectRatio="xMidYMid meet" href="${logo}"/>`);
+        } else {
+          c.add(`<rect x="${r2(pad)}" y="${r2(ty)}" width="${tile}" height="${tile}" rx="${rx}" fill="${lang}"/>`);
+          c.add(`<rect x="${r2(pad)}" y="${r2(ty)}" width="${tile}" height="${tile}" rx="${rx}" fill="url(#tileShine)"/>`);
+          c.text(pad + tile / 2, ty + tile * 0.69, name[0].toUpperCase(), { font: "sg7", size: tile * 0.52, anchor: "middle", fill: lum(lang) > 0.55 ? P.ink : "#FFFFFF" });
+        }
         const tx = pad + tile + (mobile ? 10 : 16);
         const maxW = W * ROW_INFO - tx - (mobile ? 6 : 16);
         if (mobile) {

@@ -5,6 +5,8 @@
       "stars": 186,
       "language": "Go",
       "description": "Open-source CI/CD security tool: finds the security checks your pipeline is missing, and the ones that can never fail the build. GitHub Actions, GitLab CI and more.",
+      "ownerType": "Organization",
+      "ownerAvatar": "https://avatars.githubusercontent.com/u/197389064?v=4",
       "prs": [
         {
           "number": 684,
@@ -63,6 +65,8 @@
       "stars": 127,
       "language": "JavaScript",
       "description": "Private AI summarizer for anything you read. Inspired by Mozilla's Orbit.",
+      "ownerType": "User",
+      "ownerAvatar": "https://avatars.githubusercontent.com/u/122383401?v=4",
       "prs": [
         {
           "number": 664,
@@ -101,6 +105,8 @@
       "stars": 2,
       "language": "TypeScript",
       "description": "VS Code extension for chatting with and delegating coding tasks to local DeepLocal OpenAI-compatible models.",
+      "ownerType": "User",
+      "ownerAvatar": "https://avatars.githubusercontent.com/u/97914108?v=4",
       "prs": [
         {
           "number": 89,
@@ -139,6 +145,8 @@
       "stars": 25,
       "language": "Rust",
       "description": "Local-first, open-source AI agent platform built with Rust and Tauri. Desktop automation, multi-agent workflows, permission controls, and local or cloud LLMs.",
+      "ownerType": "User",
+      "ownerAvatar": "https://avatars.githubusercontent.com/u/73295089?v=4",
       "prs": [
         {
           "number": 738,
@@ -172,6 +180,8 @@
       "stars": 15,
       "language": "Python",
       "description": "Turn your repos into a team of Claude Code agents with persistent memory, coordinated tasks, and a live dashboard.",
+      "ownerType": "User",
+      "ownerAvatar": "https://avatars.githubusercontent.com/u/77556948?v=4",
       "prs": [
         {
           "number": 138,
@@ -195,6 +205,8 @@
       "stars": 4158,
       "language": "Python",
       "description": "The open-source context layer for AI agents and enterprise AI search. Permission-aware search and cited answers across 30+ sources, including Slack, Drive, Jira, GitHub and Microsoft 365, for people and agents through MCP, SDKs and built-in agents. Self-hosted or Cloud.",
+      "ownerType": "Organization",
+      "ownerAvatar": "https://avatars.githubusercontent.com/u/201571456?v=4",
       "prs": [
         {
           "number": 5750,
@@ -213,6 +225,8 @@
       "stars": 87,
       "language": "TypeScript",
       "description": "A local-first desktop alternative to Grok Bot, OpenBot, T3 Code, Herdr and Orca. Run Claude Code, Codex, Cursor and 13 more coding agents as one team on your own computer: a shared board, agents that check each other’s work, and no account. Free. macOS, Windows, Linux.",
+      "ownerType": "User",
+      "ownerAvatar": "https://avatars.githubusercontent.com/u/89994154?v=4",
       "prs": [
         {
           "number": 10,
@@ -226,6 +240,8 @@
       "stars": 26,
       "language": "JavaScript",
       "description": "Lightweight, local-only MV3 Chrome extension for reducing common third-party web tracking.",
+      "ownerType": "User",
+      "ownerAvatar": "https://avatars.githubusercontent.com/u/180060492?v=4",
       "prs": [
         {
           "number": 55,
@@ -239,6 +255,8 @@
       "stars": 6,
       "language": "TypeScript",
       "description": "Discord bot that watches BookMyShow and DMs you the moment tickets open. Self-hosted with one command. Bun + TypeScript + SQLite, no API keys.",
+      "ownerType": "User",
+      "ownerAvatar": "https://avatars.githubusercontent.com/u/11766476?v=4",
       "prs": [
         {
           "number": 155,
@@ -252,6 +270,8 @@
       "stars": 2,
       "language": "TypeScript",
       "description": "Intelligent HTTP retry with exponential backoff, automatic failure logging, and replay support",
+      "ownerType": "User",
+      "ownerAvatar": "https://avatars.githubusercontent.com/u/28839724?v=4",
       "prs": [
         {
           "number": 70,
@@ -265,6 +285,8 @@
       "stars": 1,
       "language": "JavaScript",
       "description": "An interactive digital keyboard playground: explore keyboard layouts, test shortcuts, play typing games, and hear switch-inspired sounds.",
+      "ownerType": "User",
+      "ownerAvatar": "https://avatars.githubusercontent.com/u/74741855?v=4",
       "prs": [
         {
           "number": 34,

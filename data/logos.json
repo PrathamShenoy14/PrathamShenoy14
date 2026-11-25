@@ -1,0 +1,68 @@
+{
+  "MustacheCase/zanadir": {
+    "file": "mustachecase-zanadir.png",
+    "source": "directory/zanadir/.claude-plugin/icon.png",
+    "override": null,
+    "checkedAt": "2026-11-25"
+  },
+  "darshi1337/apogee": {
+    "file": "darshi1337-apogee.png",
+    "source": ".github/assets/apogee-logo.png",
+    "override": null,
+    "checkedAt": "2026-11-25"
+  },
+  "petertzy/deeplocal-chat-adapter": {
+    "file": null,
+    "source": null,
+    "override": null,
+    "checkedAt": "2026-11-25"
+  },
+  "emreocell/Praxi-Bot": {
+    "file": "emreocell-praxi-bot.png",
+    "source": "apps/desktop/ui/public/apple-touch-icon.png",
+    "override": null,
+    "checkedAt": "2026-11-25"
+  },
+  "JamshidS/aiset": {
+    "file": "jamshids-aiset.png",
+    "source": "src/aiset/static/apple-touch-icon.png",
+    "override": null,
+    "checkedAt": "2026-11-25"
+  },
+  "pipeshub-ai/pipeshub-ai": {
+    "file": "pipeshub-ai-pipeshub-ai.svg",
+    "source": "frontend/app/icon.svg",
+    "override": null,
+    "checkedAt": "2026-11-25"
+  },
+  "splashxmoon/friday": {
+    "file": "splashxmoon-friday.svg",
+    "source": "public/favicon.svg",
+    "override": null,
+    "checkedAt": "2026-11-25"
+  },
+  "alex-w-developer/GetBlocked": {
+    "file": "alex-w-developer-getblocked.png",
+    "source": "assets/getblocked-logo-128p.png",
+    "override": null,
+    "checkedAt": "2026-11-25"
+  },
+  "Ishannaik/seatsniper": {
+    "file": null,
+    "source": null,
+    "override": null,
+    "checkedAt": "2026-11-25"
+  },
+  "AubaidFarrukh/smart-retry": {
+    "file": null,
+    "source": null,
+    "override": null,
+    "checkedAt": "2026-11-25"
+  },
+  "techkayacodes/keyboard-cheat-codes": {
+    "file": null,
+    "source": null,
+    "override": null,
+    "checkedAt": "2026-11-25"
+  }
+}

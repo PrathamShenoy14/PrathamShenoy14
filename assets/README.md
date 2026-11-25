@@ -10,3 +10,11 @@
 Edit `profile.config.json`, then run `node scripts/build.mjs` (Node.js 20+). Merged PRs and the
 contribution calendar are fetched from GitHub automatically, and the workflow in
 `.github/workflows/refresh.yml` rebuilds everything daily. Never edit `README.md` or `dist/` by hand.
+
+## Project logos
+
+Each contribution row shows the repository's own logo when the build can find one (a roughly
+square `logo`/`icon`/`favicon` PNG or SVG in the repository), else the owning organisation's
+avatar, else a lettered tile. Choices are cached in `data/logos.json` and `data/logos/`. To pick a
+different image, add it under `openSource.logos` in `profile.config.json`, keyed by repository:
+a path inside that repository, an image URL, or `"none"` for the lettered tile.
