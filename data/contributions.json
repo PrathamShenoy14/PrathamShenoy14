@@ -60,7 +60,7 @@
     },
     {
       "repository": "darshi1337/apogee",
-      "stars": 124,
+      "stars": 127,
       "language": "JavaScript",
       "description": "Private AI summarizer for anything you read. Inspired by Mozilla's Orbit.",
       "prs": [
@@ -168,8 +168,31 @@
       ]
     },
     {
+      "repository": "JamshidS/aiset",
+      "stars": 15,
+      "language": "Python",
+      "description": "Turn your repos into a team of Claude Code agents with persistent memory, coordinated tasks, and a live dashboard.",
+      "prs": [
+        {
+          "number": 138,
+          "title": "feat(run): summarize task costs",
+          "mergedAt": "2026-11-25T10:38:52Z"
+        },
+        {
+          "number": 136,
+          "title": "fix(run): reveal hidden characters in issue text",
+          "mergedAt": "2026-11-20T01:18:48Z"
+        },
+        {
+          "number": 133,
+          "title": "fix: parse supported GitHub issue references",
+          "mergedAt": "2026-11-06T19:50:50Z"
+        }
+      ]
+    },
+    {
       "repository": "pipeshub-ai/pipeshub-ai",
-      "stars": 4150,
+      "stars": 4158,
       "language": "Python",
       "description": "The open-source context layer for AI agents and enterprise AI search. Permission-aware search and cited answers across 30+ sources, including Slack, Drive, Jira, GitHub and Microsoft 365, for people and agents through MCP, SDKs and built-in agents. Self-hosted or Cloud.",
       "prs": [
@@ -186,26 +209,8 @@
       ]
     },
     {
-      "repository": "JamshidS/aiset",
-      "stars": 15,
-      "language": "Python",
-      "description": "Turn your repos into a team of Claude Code agents with persistent memory, coordinated tasks, and a live dashboard.",
-      "prs": [
-        {
-          "number": 136,
-          "title": "fix(run): reveal hidden characters in issue text",
-          "mergedAt": "2026-11-20T01:18:48Z"
-        },
-        {
-          "number": 133,
-          "title": "fix: parse supported GitHub issue references",
-          "mergedAt": "2026-11-06T19:50:50Z"
-        }
-      ]
-    },
-    {
       "repository": "splashxmoon/friday",
-      "stars": 86,
+      "stars": 87,
       "language": "TypeScript",
       "description": "A local-first desktop alternative to Grok Bot, OpenBot, T3 Code, Herdr and Orca. Run Claude Code, Codex, Cursor and 13 more coding agents as one team on your own computer: a shared board, agents that check each other’s work, and no account. Free. macOS, Windows, Linux.",
       "prs": [

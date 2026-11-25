@@ -82,6 +82,14 @@ async function fetchActivity() {
 function cached(name, fresh) {
   const file = join(ROOT, "data", `${name}.json`);
   if (fresh) {
+    // Keep the old snapshot (and its timestamp) when nothing but the timestamp changed on the
+    // same day, so frequent scheduled runs only commit when something visible changed.
+    if (existsSync(file)) {
+      const old = JSON.parse(readFileSync(file, "utf8"));
+      const strip = ({ refreshedAt, ...rest }) => JSON.stringify(rest);
+      const sameDay = (old.refreshedAt || "").slice(0, 10) === (fresh.refreshedAt || "").slice(0, 10);
+      if (sameDay && strip(old) === strip(fresh)) return old;
+    }
     mkdirSync(dirname(file), { recursive: true });
     writeFileSync(file, JSON.stringify(fresh, null, 2) + "\n");
     return fresh;
