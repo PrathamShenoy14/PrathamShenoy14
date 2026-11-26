@@ -70,5 +70,17 @@
     "source": "public/favicon.svg",
     "override": null,
     "checkedAt": "2026-11-26"
+  },
+  "NexyPy/nexy": {
+    "file": "nexypy-nexy.svg",
+    "source": "sites/vanilla/assets/favicon.svg",
+    "override": null,
+    "checkedAt": "2026-11-26"
+  },
+  "RubahAnomali/patchlint": {
+    "file": null,
+    "source": null,
+    "override": null,
+    "checkedAt": "2026-11-26"
   }
 }

@@ -207,7 +207,7 @@
     },
     {
       "repository": "pipeshub-ai/pipeshub-ai",
-      "stars": 4161,
+      "stars": 4164,
       "language": "Python",
       "description": "The open-source context layer for AI agents and enterprise AI search. Permission-aware search and cited answers across 30+ sources, including Slack, Drive, Jira, GitHub and Microsoft 365, for people and agents through MCP, SDKs and built-in agents. Self-hosted or Cloud.",
       "ownerType": "Organization",
@@ -227,7 +227,7 @@
     },
     {
       "repository": "splashxmoon/friday-code",
-      "stars": 95,
+      "stars": 111,
       "language": "TypeScript",
       "description": "One app for all your coding agents: Claude Code, Codex, Cursor and 15 more, on the subscriptions you already pay for. Run them side by side, or let them split a job and review each other's work. Free, open source.",
       "ownerType": "User",
@@ -252,6 +252,21 @@
           "number": 55,
           "title": "docs: add Decoy Mode request transformation examples",
           "mergedAt": "2026-10-08T04:33:26Z"
+        }
+      ]
+    },
+    {
+      "repository": "NexyPy/nexy",
+      "stars": 11,
+      "language": "Python",
+      "description": "Next.js, in Python. Same file routes, same layouts, same islands, with Python on the server. FastAPI + Vite in one process: no second server, no CORS block.",
+      "ownerType": "Organization",
+      "ownerAvatar": "https://avatars.githubusercontent.com/u/194209359?v=4",
+      "prs": [
+        {
+          "number": 672,
+          "title": "feat(router): add useRateLimit, a 429 for a client that calls too often",
+          "mergedAt": "2026-11-26T19:43:09Z"
         }
       ]
     },
@@ -297,6 +312,21 @@
           "number": 34,
           "title": "feat(colorway): add Cyberpunk 2077 theme",
           "mergedAt": "2026-11-14T03:27:33Z"
+        }
+      ]
+    },
+    {
+      "repository": "RubahAnomali/patchlint",
+      "stars": 0,
+      "language": "Python",
+      "description": "Beginner-friendly security linter for Dockerfiles and GitHub Actions workflows. Every finding explains why it matters and how to fix it.",
+      "ownerType": "User",
+      "ownerAvatar": "https://avatars.githubusercontent.com/u/206820789?v=4",
+      "prs": [
+        {
+          "number": 59,
+          "title": "feat: add a GitHub Action so patchlint runs with uses:",
+          "mergedAt": "2026-11-26T19:33:23Z"
         }
       ]
     }
