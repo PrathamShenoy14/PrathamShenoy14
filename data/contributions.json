@@ -2,7 +2,7 @@
   "repos": [
     {
       "repository": "MustacheCase/zanadir",
-      "stars": 186,
+      "stars": 188,
       "language": "Go",
       "description": "Open-source CI/CD security tool: finds the security checks your pipeline is missing, and the ones that can never fail the build. GitHub Actions, GitLab CI and more.",
       "ownerType": "Organization",
@@ -101,8 +101,48 @@
       ]
     },
     {
+      "repository": "emreocell/Praxi-Bot",
+      "stars": 26,
+      "language": "Rust",
+      "description": "Local-first, open-source AI agent platform built with Rust and Tauri. Desktop automation, multi-agent workflows, permission controls, and local or cloud LLMs.",
+      "ownerType": "User",
+      "ownerAvatar": "https://avatars.githubusercontent.com/u/73295089?v=4",
+      "prs": [
+        {
+          "number": 866,
+          "title": "feat(ui): standing grants view in the Vault screen",
+          "mergedAt": "2026-11-25T22:23:25Z"
+        },
+        {
+          "number": 738,
+          "title": "feat(desktop): praxi:// deep links to open a bot, chat or run",
+          "mergedAt": "2026-11-24T13:49:46Z"
+        },
+        {
+          "number": 485,
+          "title": "feat(release): check versions and generate grouped release notes",
+          "mergedAt": "2026-11-21T19:07:06Z"
+        },
+        {
+          "number": 423,
+          "title": "fix(docs): validate Markdown heading anchors",
+          "mergedAt": "2026-11-20T18:46:50Z"
+        },
+        {
+          "number": 327,
+          "title": "feat(scripts): check contributor prerequisites",
+          "mergedAt": "2026-11-19T16:59:34Z"
+        },
+        {
+          "number": 265,
+          "title": "feat(cli): add shell completions and man pages",
+          "mergedAt": "2026-11-18T22:07:09Z"
+        }
+      ]
+    },
+    {
       "repository": "petertzy/deeplocal-chat-adapter",
-      "stars": 2,
+      "stars": 1,
       "language": "TypeScript",
       "description": "VS Code extension for chatting with and delegating coding tasks to local DeepLocal OpenAI-compatible models.",
       "ownerType": "User",
@@ -141,43 +181,8 @@
       ]
     },
     {
-      "repository": "emreocell/Praxi-Bot",
-      "stars": 25,
-      "language": "Rust",
-      "description": "Local-first, open-source AI agent platform built with Rust and Tauri. Desktop automation, multi-agent workflows, permission controls, and local or cloud LLMs.",
-      "ownerType": "User",
-      "ownerAvatar": "https://avatars.githubusercontent.com/u/73295089?v=4",
-      "prs": [
-        {
-          "number": 738,
-          "title": "feat(desktop): praxi:// deep links to open a bot, chat or run",
-          "mergedAt": "2026-11-24T13:49:46Z"
-        },
-        {
-          "number": 485,
-          "title": "feat(release): check versions and generate grouped release notes",
-          "mergedAt": "2026-11-21T19:07:06Z"
-        },
-        {
-          "number": 423,
-          "title": "fix(docs): validate Markdown heading anchors",
-          "mergedAt": "2026-11-20T18:46:50Z"
-        },
-        {
-          "number": 327,
-          "title": "feat(scripts): check contributor prerequisites",
-          "mergedAt": "2026-11-19T16:59:34Z"
-        },
-        {
-          "number": 265,
-          "title": "feat(cli): add shell completions and man pages",
-          "mergedAt": "2026-11-18T22:07:09Z"
-        }
-      ]
-    },
-    {
       "repository": "JamshidS/aiset",
-      "stars": 15,
+      "stars": 16,
       "language": "Python",
       "description": "Turn your repos into a team of Claude Code agents with persistent memory, coordinated tasks, and a live dashboard.",
       "ownerType": "User",
@@ -202,7 +207,7 @@
     },
     {
       "repository": "pipeshub-ai/pipeshub-ai",
-      "stars": 4158,
+      "stars": 4161,
       "language": "Python",
       "description": "The open-source context layer for AI agents and enterprise AI search. Permission-aware search and cited answers across 30+ sources, including Slack, Drive, Jira, GitHub and Microsoft 365, for people and agents through MCP, SDKs and built-in agents. Self-hosted or Cloud.",
       "ownerType": "Organization",
@@ -221,10 +226,10 @@
       ]
     },
     {
-      "repository": "splashxmoon/friday",
-      "stars": 87,
+      "repository": "splashxmoon/friday-code",
+      "stars": 95,
       "language": "TypeScript",
-      "description": "A local-first desktop alternative to Grok Bot, OpenBot, T3 Code, Herdr and Orca. Run Claude Code, Codex, Cursor and 13 more coding agents as one team on your own computer: a shared board, agents that check each other’s work, and no account. Free. macOS, Windows, Linux.",
+      "description": "One app for all your coding agents: Claude Code, Codex, Cursor and 15 more, on the subscriptions you already pay for. Run them side by side, or let them split a job and review each other's work. Free, open source.",
       "ownerType": "User",
       "ownerAvatar": "https://avatars.githubusercontent.com/u/89994154?v=4",
       "prs": [
@@ -237,7 +242,7 @@
     },
     {
       "repository": "alex-w-developer/GetBlocked",
-      "stars": 26,
+      "stars": 25,
       "language": "JavaScript",
       "description": "Lightweight, local-only MV3 Chrome extension for reducing common third-party web tracking.",
       "ownerType": "User",

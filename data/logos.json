@@ -64,5 +64,11 @@
     "source": null,
     "override": null,
     "checkedAt": "2026-11-25"
+  },
+  "splashxmoon/friday-code": {
+    "file": "splashxmoon-friday-code.svg",
+    "source": "public/favicon.svg",
+    "override": null,
+    "checkedAt": "2026-11-26"
   }
 }
