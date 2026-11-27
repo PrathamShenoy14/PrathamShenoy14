@@ -67,7 +67,7 @@
     },
     {
       "repository": "darshi1337/apogee",
-      "stars": 127,
+      "stars": 128,
       "language": "JavaScript",
       "description": "Private AI summarizer for anything you read. Inspired by Mozilla's Orbit.",
       "ownerType": "User",
@@ -107,7 +107,7 @@
     },
     {
       "repository": "emreocell/Praxi-Bot",
-      "stars": 26,
+      "stars": 27,
       "language": "Rust",
       "description": "Local-first, open-source AI agent platform built with Rust and Tauri. Desktop automation, multi-agent workflows, permission controls, and local or cloud LLMs.",
       "ownerType": "User",
@@ -231,8 +231,48 @@
       ]
     },
     {
+      "repository": "NexyPy/nexy",
+      "stars": 11,
+      "language": "Python",
+      "description": "Next.js, in Python. Same file routes, same layouts, same islands, with Python on the server. FastAPI + Vite in one process: no second server, no CORS block.",
+      "ownerType": "Organization",
+      "ownerAvatar": "https://avatars.githubusercontent.com/u/194209359?v=4",
+      "prs": [
+        {
+          "number": 691,
+          "title": "test(e2e): measure the reload from save to browser",
+          "mergedAt": "2026-11-27T14:14:53Z"
+        },
+        {
+          "number": 672,
+          "title": "feat(router): add useRateLimit, a 429 for a client that calls too often",
+          "mergedAt": "2026-11-26T19:43:09Z"
+        }
+      ]
+    },
+    {
+      "repository": "RubahAnomali/patchlint",
+      "stars": 0,
+      "language": "Python",
+      "description": "Beginner-friendly security linter for Dockerfiles and GitHub Actions workflows. Every finding explains why it matters and how to fix it.",
+      "ownerType": "User",
+      "ownerAvatar": "https://avatars.githubusercontent.com/u/206820789?v=4",
+      "prs": [
+        {
+          "number": 63,
+          "title": "feat(github_actions): scan composite actions (action.yml) with GA001 and GA002",
+          "mergedAt": "2026-11-27T15:32:22Z"
+        },
+        {
+          "number": 59,
+          "title": "feat: add a GitHub Action so patchlint runs with uses:",
+          "mergedAt": "2026-11-26T19:33:23Z"
+        }
+      ]
+    },
+    {
       "repository": "splashxmoon/friday-code",
-      "stars": 128,
+      "stars": 131,
       "language": "TypeScript",
       "description": "One app for all your coding agents: Claude Code, Codex, Cursor and 15 more, on the subscriptions you already pay for. Run them side by side, or let them split a job and review each other's work. Free, open source.",
       "ownerType": "User",
@@ -257,21 +297,6 @@
           "number": 55,
           "title": "docs: add Decoy Mode request transformation examples",
           "mergedAt": "2026-10-08T04:33:26Z"
-        }
-      ]
-    },
-    {
-      "repository": "NexyPy/nexy",
-      "stars": 11,
-      "language": "Python",
-      "description": "Next.js, in Python. Same file routes, same layouts, same islands, with Python on the server. FastAPI + Vite in one process: no second server, no CORS block.",
-      "ownerType": "Organization",
-      "ownerAvatar": "https://avatars.githubusercontent.com/u/194209359?v=4",
-      "prs": [
-        {
-          "number": 672,
-          "title": "feat(router): add useRateLimit, a 429 for a client that calls too often",
-          "mergedAt": "2026-11-26T19:43:09Z"
         }
       ]
     },
@@ -317,21 +342,6 @@
           "number": 34,
           "title": "feat(colorway): add Cyberpunk 2077 theme",
           "mergedAt": "2026-11-14T03:27:33Z"
-        }
-      ]
-    },
-    {
-      "repository": "RubahAnomali/patchlint",
-      "stars": 0,
-      "language": "Python",
-      "description": "Beginner-friendly security linter for Dockerfiles and GitHub Actions workflows. Every finding explains why it matters and how to fix it.",
-      "ownerType": "User",
-      "ownerAvatar": "https://avatars.githubusercontent.com/u/206820789?v=4",
-      "prs": [
-        {
-          "number": 59,
-          "title": "feat: add a GitHub Action so patchlint runs with uses:",
-          "mergedAt": "2026-11-26T19:33:23Z"
         }
       ]
     }
