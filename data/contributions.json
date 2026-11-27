@@ -9,6 +9,11 @@
       "ownerAvatar": "https://avatars.githubusercontent.com/u/197389064?v=4",
       "prs": [
         {
+          "number": 740,
+          "title": "feat(rules): recognise check-spelling as a linter",
+          "mergedAt": "2026-11-27T05:49:56Z"
+        },
+        {
           "number": 684,
           "title": "fix(remote): detect settings-enabled Dependabot security updates",
           "mergedAt": "2026-11-20T05:39:13Z"
@@ -207,7 +212,7 @@
     },
     {
       "repository": "pipeshub-ai/pipeshub-ai",
-      "stars": 4164,
+      "stars": 4165,
       "language": "Python",
       "description": "The open-source context layer for AI agents and enterprise AI search. Permission-aware search and cited answers across 30+ sources, including Slack, Drive, Jira, GitHub and Microsoft 365, for people and agents through MCP, SDKs and built-in agents. Self-hosted or Cloud.",
       "ownerType": "Organization",
@@ -227,7 +232,7 @@
     },
     {
       "repository": "splashxmoon/friday-code",
-      "stars": 111,
+      "stars": 128,
       "language": "TypeScript",
       "description": "One app for all your coding agents: Claude Code, Codex, Cursor and 15 more, on the subscriptions you already pay for. Run them side by side, or let them split a job and review each other's work. Free, open source.",
       "ownerType": "User",
